@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.vertie.modules.analyze2.Analyze2ViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        <TextView-->
+<!--            android:id="@+id/analyze2title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dp30"-->
+<!--            android:fontFamily="@font/robotomedium"-->
+<!--            android:text="@string/analyze"-->
+<!--            android:textColor="@color/color231F20"-->
+<!--            android:textSize="@dimen/sp20"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/analyze2backbutton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/dp20"-->
+<!--            android:layout_marginTop="@dimen/dp30"-->
+<!--            android:background="@drawable/backbuttonbackground"-->
+<!--            android:padding="@dimen/dp5"-->
+<!--            android:src="@drawable/backbuttonicon"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="29dp"
+            android:background="@drawable/progressbaranalyzeback"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/progressanalyze2"
+            android:layout_width="0dp"
+            android:layout_height="13dp"
+
+            android:layout_marginTop="29dp"
+            android:background="@drawable/progressbaranalyzefront"
+            app:layout_constraintEnd_toEndOf="@id/guideline3"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/analyze2question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/what_did_you_do_before_measurement"
+            android:textColor="@color/color231F20"
+            android:textSize="@dimen/sp20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressanalyze2" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fillread"
+            android:layout_width="0dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintEnd_toEndOf="@id/firstcolend"
+            app:layout_constraintTop_toBottomOf="@id/analyze2question">
+
+
+            <ImageView
+                android:id="@+id/read"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/fill_read"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/read"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/read"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fillwork"
+            android:layout_width="0dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintEnd_toEndOf="@id/midcolend"
+            app:layout_constraintStart_toStartOf="@id/midcolstart"
+            app:layout_constraintTop_toBottomOf="@id/analyze2question">
+
+
+            <ImageView
+                android:id="@+id/work"
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_fill_work"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/work"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/work"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fillholiday"
+            android:layout_width="0dp"
+
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/lastcolstart"
+            app:layout_constraintEnd_toEndOf="@id/lastcolend"
+            app:layout_constraintTop_toBottomOf="@id/analyze2question">
+
+
+            <ImageView
+                android:id="@+id/holiday"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_fill_holiday"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
+                android:text="@string/holiday"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/holiday"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fillphysicallabor"
+            android:layout_width="0dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp25"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintEnd_toEndOf="@id/firstcolend"
+            app:layout_constraintTop_toBottomOf="@id/fillread">
+
+
+            <ImageView
+                android:id="@+id/physicallabor"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_fill_physical_labour"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
+                android:text="@string/physical_labor"
+                android:textAlignment="center"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/physicallabor"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fillmeditation"
+            android:layout_width="0dp"
+
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp25"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintEnd_toEndOf="@id/midcolend"
+            app:layout_constraintStart_toStartOf="@id/midcolstart"
+            app:layout_constraintTop_toBottomOf="@id/fillwork">
+
+
+            <ImageView
+                android:id="@+id/meditation"
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_fill_meditation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/meditation"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/meditation"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fillsleep"
+            android:layout_width="0dp"
+
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp25"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/lastcolstart"
+            app:layout_constraintEnd_toEndOf="@id/lastcolend"
+            app:layout_constraintTop_toBottomOf="@id/fillholiday">
+
+
+            <ImageView
+                android:id="@+id/sleep"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_fill_sleep"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
+                android:text="@string/sleep"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sleep"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/filllearn"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/dp25"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintEnd_toEndOf="@id/firstcolend"
+            app:layout_constraintTop_toBottomOf="@id/fillphysicallabor">
+
+
+            <ImageView
+                android:id="@+id/learn"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_fill_learn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/learn"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/learn"
+
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fillexercise"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/dp25"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintEnd_toEndOf="@id/midcolend"
+            app:layout_constraintStart_toStartOf="@id/midcolstart"
+            app:layout_constraintTop_toBottomOf="@id/fillmeditation">
+
+
+            <ImageView
+                android:id="@+id/exercise"
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_fill_exercise"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/exercise"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exercise"
+
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fillwalk"
+            android:layout_width="0dp"
+
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/dp25"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/lastcolstart"
+            app:layout_constraintEnd_toEndOf="@id/lastcolend"
+            app:layout_constraintTop_toBottomOf="@id/fillsleep">
+
+
+            <ImageView
+                android:id="@+id/walk"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_fill_walk"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
+                android:text="@string/walk"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/walk"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/firstcolstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/firstcolend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.32" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/midcolstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.365" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/midcolend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.635" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lastcolstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.68" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lastcolend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

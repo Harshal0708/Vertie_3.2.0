@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "160235697292",
+    "project_id": "vertie-13071",
+    "storage_bucket": "vertie-13071.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160235697292:android:5f0ec748f559b3f29bb7a9",
+        "android_client_info": {
+          "package_name": "com.vertie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160235697292-u3eur7cer7p8j7lgtnsjmesi4mmhmept.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUzrTX7Vi-xX0jR6hymLo2lVJxoz87g1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160235697292-u3eur7cer7p8j7lgtnsjmesi4mmhmept.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

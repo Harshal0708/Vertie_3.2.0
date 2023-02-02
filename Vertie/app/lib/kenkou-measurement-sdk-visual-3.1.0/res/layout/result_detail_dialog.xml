@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/button_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:padding="4dp"
+                    android:scaleY="1.1"
+                    android:scaleX="1.1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@drawable/ic_close"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    app:tint="?android:textColorPrimary" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="36dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dialog_title"
+                style="@style/ResultHeader_kk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/result_dialog_title_stress" />
+
+            <FrameLayout
+                android:id="@+id/dialog_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/dialog_meaning_title"
+                style="@style/ResultSubheader_kk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/result_dialog_meaning"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/dialog_meaning"
+                style="@style/ResultText_kk"
+                android:hyphenationFrequency="full"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/result_dialog_meaning_stress"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/dialog_affect_title"
+                style="@style/ResultSubheader_kk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/result_dialog_affect"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/dialog_affect"
+                style="@style/ResultText_kk"
+                android:hyphenationFrequency="full"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/result_dialog_affect_stress_medium"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

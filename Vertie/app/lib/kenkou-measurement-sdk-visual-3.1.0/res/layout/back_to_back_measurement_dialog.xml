@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:paddingTop="28dp"
+    android:paddingBottom="26dp"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            style="@style/ResultHeader_kk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/measurement_backtoback_popup_title" />
+
+        <ImageView
+            android:id="@+id/dialog_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/ic_clock" />
+
+        <TextView
+            android:id="@+id/dialog_meaning_short"
+            style="@style/ResultText_kk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:hyphenationFrequency="full"
+            android:text="@string/measurement_backtoback_popup_body" />
+
+
+        <LinearLayout
+            android:id="@+id/dialog_meaning_full"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/body_1"
+                style="@style/ResultText_kk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="?colorOnBackground"
+                android:layout_marginTop="19dp"
+                android:hyphenationFrequency="full"
+                android:text="@string/measurement_backtoback_popup_body2_point1" />
+
+            <TextView
+                android:id="@+id/body_2"
+                style="@style/ResultText_kk"
+                android:layout_width="match_parent"
+                android:buttonTint="?colorOnBackground"
+                android:layout_height="wrap_content"
+                android:hyphenationFrequency="full"
+                android:text="@string/measurement_backtoback_popup_body2_point2" />
+
+            <TextView
+                android:id="@+id/body_3"
+                style="@style/ResultText_kk"
+                android:buttonTint="?colorOnBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hyphenationFrequency="full"
+                android:text="@string/measurement_backtoback_popup_body2_point3" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/button_swap_description"
+            style="@style/SmallActionButton_kk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="end"
+            android:padding="6dp"
+            android:text="@string/measurement_backtoback_see_more"
+            tools:text="@string/measurement_backtoback_hide_more" />
+
+        <Button
+            android:id="@+id/button_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:minWidth="200dp"
+            android:text="@string/measurement_backtoback_continue"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</ScrollView>

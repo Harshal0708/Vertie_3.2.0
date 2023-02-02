@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="hintText"
+            type="String" />
+
+        <variable
+            name="errorEnabled"
+            type="Boolean" />
+
+        <variable
+            name="error"
+            type="String" />
+
+        <variable
+            name="input"
+            type="String" />
+
+        <variable
+            name="drawableEnd"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="drawablePadding"
+            type="Integer" />
+
+        <variable
+            name="clickable"
+            type="Boolean" />
+
+        <variable
+            name="background"
+            type="android.graphics.drawable.Drawable" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTxtLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_shape"
+            android:textColorHint="@color/color231F20op60"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeColor="@drawable/text_input_stroke_white_selector"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeErrorColor="@color/colorFF2943"
+            app:errorEnabled="@{errorEnabled}"
+            app:errorText="@{error}"
+            app:hintEnabled="true"
+            app:hintTextAppearance="@style/TextInputLayoutHintDarkText"
+            app:hintTextColor="@color/color231F20op60"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_shape"
+                android:drawableStart="@{drawableEnd}"
+                android:drawablePadding="@dimen/dp10"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:fontFamily="@font/robotolight"
+                android:nestedScrollingEnabled="false"
+                android:paddingStart="@dimen/dp20"
+                android:paddingTop="@dimen/dp20"
+                android:paddingEnd="@dimen/dp20"
+                android:paddingBottom="@dimen/dp20"
+                android:singleLine="true"
+                android:text="@={input}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color231F20op60"
+                android:textColorHint="@color/color231F20op60"
+                android:textSize="@dimen/sp18"
+                android:hint="@{hintText}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

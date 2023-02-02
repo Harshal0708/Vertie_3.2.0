@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:background="@color/grey3"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:padding="2dp">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/destination_mapp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="65"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/tvMainHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="600m2 Deck Pour - $400"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forest Lakes, 4078 / Concreter"
+            android:textSize="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21 March  2019"
+            android:textSize="10sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="0dp"
+        android:layout_weight="28"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_point_to_right2"
+        android:layout_margin="@dimen/twenty_dp"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+</LinearLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mood_view"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/questionnaire_mood_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/QuestionnaireScreenTitle_kk"
+            android:text="@string/questionnaire_mood_header" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <de.kenkou.sdk.visual.views.SelectableFlow
+                android:id="@+id/mood_items"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="mood_happy,mood_good,mood_okay,mood_bad"
+                app:flow_horizontalGap="16dp"
+                app:flow_maxElementsWrap="2"
+                app:flow_verticalGap="12dp"
+                app:flow_wrapMode="chain"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_max="280dp" />
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/mood_happy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/mood_happy"
+                app:image="@drawable/result_mood_happy"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/result_mood_happy"
+                        android:tint="@color/moodH"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Happy"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/mood_good"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/mood_good"
+                app:image="@drawable/result_mood_good"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/result_mood_good"
+                        android:tint="@color/moodG"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mood_good"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/mood_okay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/mood_okay"
+                app:image="@drawable/result_mood_okay" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/result_mood_okay"
+                        android:tint="@color/moodO"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mood_okay"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/mood_bad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/mood_bad"
+                app:image="@drawable/result_mood_bad"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/result_mood_bad"
+                        android:tint="@color/moodB"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mood_bad"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

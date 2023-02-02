@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextBottomNavigationInActive">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/robotomedium</item>
+        <item name="android:textColor">@color/Blackop20</item>
+        <item name="android:iconTint">@color/Blackop20</item>
+    </style>
+</resources>

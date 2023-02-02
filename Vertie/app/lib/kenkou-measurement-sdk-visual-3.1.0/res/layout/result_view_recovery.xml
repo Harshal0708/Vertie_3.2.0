@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.kenkou.sdk.visual.result.view.RecoveryBatteryView
+        android:id="@+id/recovery_battery"
+        android:layout_width="72dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/recovery_level"
+        style="@style/ResultCardIndexValue_kk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recovery_battery"
+        tools:text="15/100" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/recovery_status"
+        style="@style/ResultCardStatus_kk"
+        android:layout_marginTop="8dp"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="14sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintTop_toBottomOf="@id/recovery_level"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="@string/recovery_status_excellent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

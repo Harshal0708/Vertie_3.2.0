@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/details_header"
+        style="@style/ResultSubheader_kk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/result_details_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/result_cards"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:flow_maxElementsWrap="2"
+        app:flow_horizontalGap="12dp"
+        app:flow_verticalGap="10dp"
+        app:flow_wrapMode="chain"
+        app:layout_constraintTop_toBottomOf="@id/details_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:constraint_referenced_ids="chip_physical, chip_nicotine, chip_caffeine, chip_note" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_physical"
+        style="@style/ResultDetailsChip_kk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:chipIcon="@drawable/questionnaire_physically_great"
+        tools:text="Feeling great!"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_nicotine"
+        style="@style/ResultDetailsChip_kk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/nicotine"
+        tools:chipIcon="@drawable/questionnaire_stimulants_yes"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_caffeine"
+        style="@style/ResultDetailsChip_kk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/caffeine"
+        tools:chipIcon="@drawable/questionnaire_stimulants_no"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_note"
+        style="@style/ResultDetailsChip_kk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:chipIcon="@drawable/physical_note"
+        tools:text="User's personal input"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

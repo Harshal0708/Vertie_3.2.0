@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/questionnaire_activity_title"
+            style="@style/QuestionnaireScreenTitle_kk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionnaire_activity_title" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <de.kenkou.sdk.visual.views.SelectableFlow
+                android:id="@+id/activity_items"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:flow_maxElementsWrap="3"
+                app:flow_wrapMode="chain"
+                app:flow_horizontalGap="8dp"
+                app:flow_verticalGap="8dp"
+                app:flow_verticalAlign="baseline"
+                app:constraint_referenced_ids="activity_reading,activity_working,activity_holiday,activity_labour_work,activity_meditation,activity_sleeping,activity_learning,activity_sport,activity_walking"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/activity_reading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_activity_reading"
+                android:text="@string/activity_reading"
+                android:lines="2"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_activity_reading"
+                        android:tint="@color/moodO"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_reading"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/activity_working"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_activity_working"
+                android:text="@string/activity_working"
+                android:lines="2"
+                tools:ignore="MissingConstraints" />
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/activity_holiday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_activity_holiday"
+                android:text="@string/activity_holiday"
+                android:lines="2"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_activity_holiday"
+                        android:tint="@color/moodO"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_holiday"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/activity_labour_work"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_activity_labour"
+                android:text="@string/activity_labour_work"
+                android:lines="2"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_activity_labour"
+                        android:tint="@color/moodH"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_labour_work"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp17"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/activity_meditation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_activity_meditation"
+                android:text="@string/activity_meditation"
+                android:lines="2"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_activity_meditation"
+                        android:tint="@color/moodG"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_meditation"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/activity_sleeping"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_activity_sleeping"
+                android:text="@string/activity_sleeping"
+                android:lines="2"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_activity_sleeping"
+                        android:tint="@color/moodO"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_sleeping"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/activity_learning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_activity_learning"
+                android:text="@string/activity_learning"
+                android:lines="2"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_activity_learning"
+                        android:tint="@color/moodO"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_learning"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/activity_sport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_activity_sport"
+                android:text="@string/activity_sport"
+                android:lines="2"
+                tools:ignore="MissingConstraints" />
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/activity_walking"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_activity_walking"
+                android:text="@string/activity_walking"
+                android:lines="2"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_activity_walking"
+                        android:tint="@color/moodO"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_walking"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

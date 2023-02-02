@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_cat_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_margin="18dp"
+    android:padding="12dp"
+    android:background="@drawable/ic_shape"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="20dp">
+        <ImageView
+            android:id="@+id/cat_item_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_right"
+            android:visibility="gone" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/cat_item_img"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/cat_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Happy"
+            android:textColor="@color/color231F20" />
+        <!--    android:fontFamily="@font/robotobold"-->
+    </LinearLayout>
+</LinearLayout>

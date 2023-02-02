@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.kenkou.sdk.headless" >
+
+    <uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="31" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Query for sharing files defined for Android 11 -->
+    <!-- Description: https://developer.android.com/training/package-visibility/declaring -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+
+            <data android:mimeType="text/*" />
+        </intent>
+    </queries>
+
+    <application android:usesCleartextTraffic="true" >
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.de.kenkou.sdk.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="de.kenkou.sdk.headless.core.errors.ErrorOverlayActivity"
+            android:label="C++ error"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent" />
+    </application>
+
+</manifest>

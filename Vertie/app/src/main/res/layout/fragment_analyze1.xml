@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.vertie.modules.analyze1.Analyze1ViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        <TextView-->
+<!--            android:id="@+id/analyze1title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dp30"-->
+<!--            android:fontFamily="@font/robotomedium"-->
+<!--            android:text="@string/analyze"-->
+<!--            android:textColor="@color/color231F20"-->
+<!--            android:textSize="@dimen/sp20"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/analyze1backbutton"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:layout_marginTop="@dimen/dp30"-->
+<!--            android:background="@drawable/backbuttonbackground"-->
+<!--            android:src="@drawable/backbuttonicon"-->
+<!--            app:layout_constraintStart_toStartOf="@id/firstcolstart"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="29dp"
+            android:background="@drawable/progressbaranalyzeback"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:id="@+id/progressanalyze1"
+            android:layout_width="0dp"
+            android:layout_height="13dp"
+            android:layout_marginTop="29dp"
+            android:background="@drawable/progressbaranalyzefront"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintEnd_toEndOf="@id/progressend"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/analyze1question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/how_are_you_feeling_today"
+            android:textColor="@color/color231F20"
+            android:textSize="@dimen/sp20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressanalyze1" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/happymood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintBottom_toTopOf="@id/okmood"
+            app:layout_constraintEnd_toEndOf="@id/firstcolend"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintTop_toBottomOf="@id/analyze1question">
+
+
+            <ImageView
+                android:id="@+id/happy"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="49dp"
+                android:src="@drawable/happy_mood"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginBottom="23dp"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/happy"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/happy" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/goodmood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/dp30"
+
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color0D256CF4"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintBottom_toTopOf="@id/badmood"
+            app:layout_constraintEnd_toEndOf="@id/lastcolend"
+            app:layout_constraintStart_toStartOf="@id/lastcolstart"
+            app:layout_constraintTop_toBottomOf="@id/analyze1question">
+
+            <ImageView
+                android:id="@+id/good"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="49dp"
+                android:src="@drawable/good_mood"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginBottom="23dp"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/good"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/good" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/okmood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color0D256CF4"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintEnd_toEndOf="@id/firstcolend"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintTop_toBottomOf="@id/happymood">
+
+            <ImageView
+                android:id="@+id/ok"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="49dp"
+                android:src="@drawable/okay_mood"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginBottom="23dp"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/ok_mood"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ok" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/badmood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color0D256CF4"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintEnd_toEndOf="@id/lastcolend"
+            app:layout_constraintStart_toStartOf="@id/lastcolstart"
+            app:layout_constraintTop_toBottomOf="@id/goodmood">
+
+            <ImageView
+                android:id="@+id/bad"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="49dp"
+                android:src="@drawable/bad_mood"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginBottom="23dp"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/bad"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bad" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/firstcolstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/firstcolend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.475" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lastcolstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.525" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lastcolend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/progressend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.276" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

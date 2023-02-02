@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".javacode.activities.ChildSelectionActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dp30"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="I am entering information for:"
+        android:textSize="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp40"
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvNoProxyUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="No Proxy User Assigned"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="@dimen/dp20"
+        />
+
+    <GridView
+        android:id="@+id/idGVcourses"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp20"
+        android:gravity="center"
+        android:horizontalSpacing="6dp"
+        android:numColumns="2"
+        android:verticalSpacing="6dp" />
+
+</FrameLayout>
+
+
+</LinearLayout>

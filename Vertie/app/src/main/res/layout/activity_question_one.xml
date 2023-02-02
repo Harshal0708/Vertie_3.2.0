@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:fillViewport="true"
+    tools:context=".activity.QuestionActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="20dp" />
+
+
+        <include
+            android:id="@+id/question_view"
+            layout="@layout/question_common_layout_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toTopOf="@+id/top" />
+
+        <TextView
+            android:id="@+id/question_txt_name1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotobold"
+            android:text="General Respiratory Rate"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_view" />
+
+        <EditText
+            android:id="@+id/question_breath_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/question_background"
+            android:fontFamily="@font/robotomedium"
+            android:hint="My breaths per minute is"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textColor="@color/color231F20"
+            android:textColorHint="@color/colorBEBDBD"
+            android:textSize="14sp"
+            android:textCursorDrawable="@drawable/color_cursor"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_txt_name1" />
+
+        <TextView
+            android:id="@+id/question_txt_name2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotobold"
+            android:text="Weight"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_breath_count" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/question_cons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:background="@drawable/question_background"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_txt_name2">
+
+            <EditText
+                android:id="@+id/question_weight_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:fontFamily="@font/robotomedium"
+                android:hint="My weight today is"
+                android:padding="8dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color231F20"
+                android:textColorHint="@color/colorBEBDBD"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/robotobold"
+                android:text="lbs or kgs"
+                android:textAlignment="center"
+                android:textColor="@color/color231F20"
+                android:textColorHint="@color/colorBEBDBD"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question_weight_count"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/question_weight_count"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/question_txt_name3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotobold"
+            android:text="Blood Pressure"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_cons" />
+
+        <EditText
+            android:id="@+id/question_systolic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Systolic"
+            android:textColorHint="@color/colorBEBDBD"
+            android:textColor="@color/color231F20"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:fontFamily="@font/robotomedium"
+            android:padding="8dp"
+            android:background="@drawable/question_background"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_txt_name3" />
+
+        <EditText
+            android:id="@+id/question_diastolic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Diastolic"
+            android:textColorHint="@color/colorBEBDBD"
+            android:textColor="@color/color231F20"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:fontFamily="@font/robotomedium"
+            android:padding="8dp"
+            android:background="@drawable/question_background"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_systolic" />
+
+
+        <TextView
+            android:id="@+id/question_txt_name4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotobold"
+            android:text="Labs"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_diastolic" />
+
+        <EditText
+            android:id="@+id/question_breath_labs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Blood glucose level"
+            android:textColorHint="@color/colorBEBDBD"
+            android:textColor="@color/color231F20"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:fontFamily="@font/robotomedium"
+            android:padding="8dp"
+            android:background="@drawable/question_background"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_txt_name4" />
+
+        <include
+            android:id="@+id/question_view_2"
+            layout="@layout/question_common_layout_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_breath_labs"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.kenkou.sdk.visual" >
+
+    <uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="31" />
+
+    <application>
+        <activity
+            android:name="de.kenkou.sdk.visual.measurement.MeasurementActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="de.kenkou.sdk.visual.history.HistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name="de.kenkou.sdk.visual.result.ResultActivity"
+            android:exported="true" />
+        <activity
+            android:name="de.kenkou.sdk.visual.onboarding.OnboardingActivity"
+            android:exported="true" />
+        <activity
+            android:name="de.kenkou.sdk.visual.questionnaire.QuestionnaireActivity"
+            android:exported="true" />
+        <activity
+            android:name="de.kenkou.sdk.visual.biofeedback.BiofeedbackActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

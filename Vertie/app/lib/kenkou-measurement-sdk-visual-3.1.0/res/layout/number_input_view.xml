@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="#DFDFDF">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        style="@style/AnamnesisHeader_kk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="3dp"
+        android:gravity="start"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:drawableEnd="@drawable/ic_required"
+        tools:text="How old are you?" />
+
+    <LinearLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="30dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/inputEditText"
+            style="@style/AnamnesisInput_kk"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/question_background"
+            android:elevation="2dp"
+            android:maxLines="1"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            tools:hint="Enter your height" />
+
+        <TextView
+            android:id="@+id/unitTextView"
+            style="@style/AnamnesisInput_kk"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/question_background"
+            android:elevation="2dp"
+            android:gravity="center_vertical"
+            android:minWidth="120dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            tools:text="cm" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/errorTextView"
+        style="@style/AnamnesisError_kk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="52dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/inputContainer"
+        tools:text="@string/personaldata_range_error" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/result_header"
+        style="@style/ResultHeader_kk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/result_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/results_date"
+        style="@style/ResultText2_kk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="8dp"
+        app:drawableStartCompat="@drawable/result_date_ic"
+        app:drawableTint="?attr/colorOnBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/result_header"
+        app:layout_constraintTop_toBottomOf="@id/result_header"
+        tools:text="Mon, 20 Jun 2020 /  17:23" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/questionnaire_caffeine_title"
+            style="@style/QuestionnaireScreenTitle_kk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionnaire_caffeine"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <de.kenkou.sdk.visual.views.SelectableFlow
+                android:id="@+id/caffeine_items"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:flow_horizontalGap="10dp"
+                app:flow_wrapMode="chain"
+                app:constraint_referenced_ids="caffeine_yes,caffeine_never,caffeine_no"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" >
+
+                <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                    android:id="@+id/caffeine_yes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:lines="3"
+                    android:text="@string/yes"
+                    app:image="@drawable/questionnaire_stimulants_yes"
+                    tools:ignore="MissingConstraints" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@color/white">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/questionnaire_stimulants_yes"
+                            android:tint="@color/moodH"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/yes"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dp18"/>
+                    </LinearLayout>
+                </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+            </de.kenkou.sdk.visual.views.SelectableFlow>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/caffeine_never"
+                android:layout_width="0dp"
+                app:layout_constraintHorizontal_weight="1.5"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_stimulants_caffeine_never"
+                android:text="@string/caffeine_never"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_stimulants_caffeine_never"
+                        android:tint="@color/moodO"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/caffeine_never"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/caffeine_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1"
+                app:image="@drawable/questionnaire_stimulants_no"
+                android:text="@string/no"
+                android:lines="3"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_stimulants_no"
+                        android:tint="@color/moodG"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <TextView
+                android:id="@+id/questionnaire_nicotine_title"
+                style="@style/QuestionnaireScreenTitle_kk"
+                android:text="@string/questionnaire_nicotine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/caffeine_never"
+                app:layout_constraintBottom_toTopOf="@id/nicotine_items"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <de.kenkou.sdk.visual.views.SelectableFlow
+                android:id="@+id/nicotine_items"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:flow_horizontalGap="10dp"
+                app:flow_wrapMode="chain"
+                app:constraint_referenced_ids="nicotine_yes,nicotine_never,nicotine_no"
+                app:layout_constraintTop_toBottomOf="@id/questionnaire_nicotine_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/nicotine_yes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_stimulants_yes"
+                app:layout_constraintHorizontal_weight="1"
+                android:text="@string/yes"
+                android:lines="3"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_stimulants_yes"
+                        android:tint="@color/moodH"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/nicotine_never"
+                android:layout_width="0dp"
+                app:layout_constraintHorizontal_weight="1.5"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_stimulants_nicotine_never"
+                android:text="@string/nicotine_never"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_stimulants_nicotine_never"
+                        android:tint="@color/moodO"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nicotine_never"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/nicotine_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:image="@drawable/questionnaire_stimulants_no"
+                app:layout_constraintHorizontal_weight="1"
+                android:text="@string/no"
+                android:lines="3"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_stimulants_no"
+                        android:tint="@color/moodG"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

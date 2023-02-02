@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".javacode.activities.MeasurementIntroActivity">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/goBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp20"
+                    android:background="@drawable/backbuttonbackground"
+                    android:src="@drawable/backbuttonicon" />
+
+                <TextView
+                    android:layout_width="@dimen/dp0"
+                    android:layout_height="wrap_content"
+                    android:text="How to measure"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/dp20"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:id="@+id/btnEditProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp20"
+                    android:visibility="invisible"
+                    android:background="@drawable/edittext_shape"
+                    android:src="@drawable/ic_baseline_edit_note_24" />
+            </LinearLayout>
+
+
+
+            <Button
+                android:id="@+id/btAddFrigment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp20"
+                android:text="load fregment"
+                android:visibility="gone"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/container"
+                android:visibility="gone"/>
+
+<!--            <ScrollView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                >-->
+
+            <ImageView
+                android:layout_width="@dimen/dp80"
+                android:layout_height="@dimen/dp80"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp50"
+                android:layout_marginBottom="@dimen/dp50"
+                android:layout_gravity="center"
+                android:src="@drawable/profile_fragment_icon_svg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp10"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="@dimen/dp4"
+                    android:textSize="@dimen/dp20"
+                    android:textStyle="bold"
+                    android:text="How to measure"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp16"
+                    android:padding="@dimen/dp6"
+                    android:lineSpacingExtra="10sp"
+                    android:text="\u2022 Cover the camera lens with one of your fingertips.Hold it until the measurement ends!"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="@dimen/dp4"
+                    android:textSize="@dimen/dp20"
+                    android:textStyle="bold"
+                    android:text="Tips"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="10sp"
+                    android:padding="@dimen/dp6"
+                    android:text="\u2022 We measure your heart rate by detecting tiny changes in color and brightness on your fingertips."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp16"
+                    android:padding="@dimen/dp6"
+                    android:lineSpacingExtra="10sp"
+                    android:text="\u2022 Stay in a bright place or turn on your flashlight to make your reading precise."/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp16"
+                    android:padding="@dimen/dp6"
+                    android:lineSpacingExtra="10sp"
+                    android:text="\u2022 Cover the camera lens with one of your fingertips (not the flashlight,it’s hot!). The viewing frame will turn red."/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="10sp"
+                    android:padding="@dimen/dp6"
+                    android:text="\u2022 Relax and hold it still until measurement ends."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp16" />
+
+            </LinearLayout>
+
+<!--            </ScrollView>-->
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

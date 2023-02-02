@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorBackground"
+    tools:context=".activity.QuestionThreeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="20dp" />
+
+
+        <include
+            android:id="@+id/question_view"
+            layout="@layout/question_common_layout_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toTopOf="@+id/top" />
+
+        <TextView
+            android:id="@+id/question_two_txt_name1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotobold"
+            android:text="This week I was in the"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_view" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/question_two_cons_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:background="@drawable/question_background"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_two_txt_name1">
+
+            <ImageView
+                android:id="@+id/question_two_img_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_hospital"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/question_two_work"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:padding="8dp"
+                android:text="Hospital"
+                android:textColor="@color/color231F20"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question_two_img_work"
+                app:layout_constraintEnd_toStartOf="@+id/question_two_img_true"
+                app:layout_constraintStart_toEndOf="@+id/question_two_img_work"
+                app:layout_constraintTop_toTopOf="@+id/question_two_img_work" />
+
+            <ImageView
+                android:id="@+id/question_two_img_true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/question_two_work"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/question_two_cons_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:background="@drawable/question_background"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_two_cons_2">
+
+            <ImageView
+                android:id="@+id/question_two_img_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_lineal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/question_two_school"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:padding="8dp"
+                android:text="Emergency Room"
+                android:textColor="@color/color231F20"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question_two_img_school"
+                app:layout_constraintEnd_toStartOf="@+id/question_two__true"
+                app:layout_constraintStart_toEndOf="@+id/question_two_img_school"
+                app:layout_constraintTop_toTopOf="@+id/question_two_img_school" />
+
+            <ImageView
+                android:id="@+id/question_two__true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/question_two_school"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/question_three_txt_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotobold"
+            android:text="Date"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_two_cons_3" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/question_two_cons_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:background="@drawable/question_background"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_three_txt_date">
+
+            <TextView
+                android:id="@+id/question_two_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="Mon,1 Aug 2022"
+                android:padding="8dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color231F20"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/question_two_img_calender"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/question_two_img_calender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_calender"
+                app:layout_constraintBottom_toBottomOf="@+id/question_two_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/question_two_date"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/question_txt_name1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotobold"
+            android:text="Name of place"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_two_cons_1" />
+
+        <EditText
+            android:id="@+id/question_breath_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Name or Hospital or Emergency Department"
+            android:textColorHint="@color/colorBEBDBD"
+            android:textColor="@color/color231F20"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:fontFamily="@font/robotomedium"
+            android:padding="8dp"
+            android:background="@drawable/question_background"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_txt_name1" />
+
+        <TextView
+            android:id="@+id/question_txt_name3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotobold"
+            android:text="Reason why I went"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_breath_count" />
+
+        <EditText
+            android:id="@+id/question_reason_why_i_went"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Reason for going"
+            android:textColorHint="@color/colorBEBDBD"
+            android:textColor="@color/color231F20"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:fontFamily="@font/robotomedium"
+            android:padding="8dp"
+            android:background="@drawable/question_background"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_txt_name3" />
+
+        <include
+            android:id="@+id/question_view_2"
+            layout="@layout/question_common_layout_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_reason_why_i_went"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.vertie.modules.analyze3.Analyze3ViewModel" />
+    </data>
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+<!--            <TextView-->
+<!--                android:id="@+id/analyze3title"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/dp30"-->
+<!--                android:fontFamily="@font/robotomedium"-->
+<!--                android:text="@string/analyze"-->
+<!--                android:textColor="@color/color231F20"-->
+<!--                android:textSize="@dimen/sp20"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/analyze3backbutton"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/dp30"-->
+<!--                android:background="@drawable/backbuttonbackground"-->
+<!--                android:src="@drawable/backbuttonicon"-->
+<!--                app:layout_constraintStart_toStartOf="@id/firstcolstart"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="13dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="29dp"
+                android:background="@drawable/progressbaranalyzeback"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/progressanalyze3"
+                android:layout_width="0dp"
+                android:layout_height="13dp"
+                android:layout_marginTop="29dp"
+                android:background="@drawable/progressbaranalyzefront"
+                app:layout_constraintStart_toStartOf="@id/firstcolstart"
+                app:layout_constraintEnd_toEndOf="@id/progressend"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/analyze3question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/how_do_you_feel_physically"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progressanalyze3" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fantastaticmood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:background="@drawable/moodbackground"
+                android:elevation="0.4dp"
+
+                android:paddingBottom="@dimen/dp15"
+                android:shadowColor="@color/color26165DE8"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="13.65"
+                app:layout_constraintBottom_toTopOf="@id/sickmood"
+                app:layout_constraintEnd_toEndOf="@id/firstcolend"
+                app:layout_constraintStart_toStartOf="@id/firstcolstart"
+                app:layout_constraintTop_toBottomOf="@id/analyze3question">
+
+
+                <ImageView
+                    android:id="@+id/happy"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="49dp"
+                    android:src="@drawable/fill_fantastatic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="@string/fantastic"
+                    android:textColor="@color/color231F20"
+                    android:textSize="@dimen/sp20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/happy" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tiredmood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/dp30"
+
+                android:background="@drawable/moodbackground"
+                android:elevation="0.4dp"
+                android:paddingBottom="@dimen/dp15"
+                android:shadowColor="@color/color0D256CF4"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="13.65"
+                app:layout_constraintBottom_toTopOf="@id/tensemood"
+                app:layout_constraintEnd_toEndOf="@id/lastcolend"
+                app:layout_constraintStart_toStartOf="@id/lastcolstart"
+                app:layout_constraintTop_toBottomOf="@id/analyze3question">
+
+                <ImageView
+                    android:id="@+id/good"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="49dp"
+                    android:src="@drawable/ic_fill_tired"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="@string/tired"
+                    android:textColor="@color/color231F20"
+                    android:textSize="@dimen/sp20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/good" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/sickmood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/dp30"
+                android:background="@drawable/moodbackground"
+                android:elevation="0.4dp"
+
+                android:paddingBottom="@dimen/dp15"
+                android:shadowColor="@color/color0D256CF4"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="13.65"
+                app:layout_constraintEnd_toEndOf="@id/firstcolend"
+                app:layout_constraintStart_toStartOf="@id/firstcolstart"
+                app:layout_constraintTop_toBottomOf="@id/fantastaticmood">
+
+                <ImageView
+                    android:id="@+id/ok"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="49dp"
+                    android:src="@drawable/ic_fill_sick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="@string/sick"
+                    android:textColor="@color/color231F20"
+                    android:textSize="@dimen/sp20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ok" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tensemood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:background="@drawable/moodbackground"
+                android:elevation="0.4dp"
+
+                android:paddingBottom="@dimen/dp15"
+                android:shadowColor="@color/color0D256CF4"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="13.65"
+                app:layout_constraintEnd_toEndOf="@id/lastcolend"
+                app:layout_constraintStart_toStartOf="@id/lastcolstart"
+                app:layout_constraintTop_toBottomOf="@id/tiredmood">
+
+                <ImageView
+                    android:id="@+id/bad"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_marginTop="49dp"
+                    android:src="@drawable/ic_fill_tense"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="@string/tense"
+                    android:textColor="@color/color231F20"
+                    android:textSize="@dimen/sp20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bad" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/could_you_give_a_details_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sickmood"
+                android:layout_marginTop="@dimen/dp30"
+                android:layout_marginHorizontal="54dp"
+                android:textColor="@color/color231F20"
+                android:textAlignment="center"
+                android:textSize="@dimen/sp20"
+                android:fontFamily="@font/robotomedium"
+                android:id="@+id/anotherquestion"
+                />
+
+
+            <include
+                layout="@layout/input_text_light_gray_underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp14"
+                app:layout_constraintTop_toBottomOf="@id/anotherquestion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/feeling_description"
+                app:background="@{@drawable/edittext_shape}"
+                app:hintText="@{@string/today_i_feel}"
+                android:layout_marginTop="@dimen/dp20"
+                app:drawableEnd="@{@drawable/feeling_description_icon}"
+                app:input="@={viewmodel.feelingText}"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feeling_description"
+                android:layout_marginTop="81dp"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp20"
+                android:paddingVertical="@dimen/dp20"
+                android:fontFamily="@font/robotomedium"
+                android:layout_marginHorizontal="@dimen/dp14"
+                android:background="@drawable/bk_rounded_light_gray"
+                android:layout_marginBottom="@dimen/dp30"
+                android:enabled="false"
+                android:id="@+id/feeling_button"
+                />
+
+
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/firstcolstart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/firstcolend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.475" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/lastcolstart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.525" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/lastcolend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/progressend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.724" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

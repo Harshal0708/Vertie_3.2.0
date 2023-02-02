@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.vertie.modules.analyze4.Analyze4ViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        <TextView-->
+<!--            android:id="@+id/analyze2title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dp30"-->
+<!--            android:fontFamily="@font/robotomedium"-->
+<!--            android:text="@string/analyze"-->
+<!--            android:textColor="@color/color231F20"-->
+<!--            android:textSize="@dimen/sp20"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/analyze4backbutton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/dp20"-->
+<!--            android:layout_marginTop="@dimen/dp30"-->
+<!--            android:background="@drawable/backbuttonbackground"-->
+<!--            android:padding="@dimen/dp5"-->
+<!--            android:src="@drawable/backbuttonicon"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+
+
+        <View
+            android:id="@+id/progressanalyze2"
+            android:layout_width="0dp"
+            android:layout_height="13dp"
+
+            android:layout_marginTop="29dp"
+            android:background="@drawable/progressbaranalyzefront"
+            app:layout_constraintEnd_toEndOf="@id/guideline3"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/caffainequestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="69dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/did_you_havee_any_caffaine_1_hour_before_the_measurement"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            android:textSize="@dimen/sp20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressanalyze2" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/yescaffaine"
+            android:layout_width="0dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintEnd_toEndOf="@id/firstcolend"
+            app:layout_constraintTop_toBottomOf="@id/caffainequestion">
+
+
+            <ImageView
+                android:id="@+id/yesiconcaffaine"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_right_check"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/yes"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/yesiconcaffaine"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nevercaffaine"
+            android:layout_width="0dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintEnd_toEndOf="@id/midcolend"
+            app:layout_constraintStart_toStartOf="@id/midcolstart"
+            app:layout_constraintTop_toBottomOf="@id/caffainequestion">
+
+
+            <ImageView
+                android:id="@+id/nevericoncaffaine"
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_never_caf"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/i_never_have_caffeine"
+                android:textAlignment="center"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nevericoncaffaine"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nocaffaine"
+            android:layout_width="0dp"
+
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/lastcolstart"
+            app:layout_constraintEnd_toEndOf="@id/lastcolend"
+            app:layout_constraintTop_toBottomOf="@id/caffainequestion">
+
+
+            <ImageView
+                android:id="@+id/noiconcaffaine"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_no"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
+                android:text="@string/no"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/noiconcaffaine"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/nicotinequestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp45"
+            android:layout_marginHorizontal="69dp"
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/did_you_have_any_nicotine_1_hour_before_the_measurement"
+            android:textAlignment="center"
+            android:textColor="@color/color231F20"
+            android:textSize="@dimen/sp20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/yescaffaine" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/yesnicotine"
+            android:layout_width="0dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/firstcolstart"
+            app:layout_constraintEnd_toEndOf="@id/firstcolend"
+            app:layout_constraintTop_toBottomOf="@id/nicotinequestion">
+
+
+            <ImageView
+                android:id="@+id/yesiconnicotine"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_right_check"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/yes"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/yesiconnicotine"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nevernicotine"
+            android:layout_width="0dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintEnd_toEndOf="@id/midcolend"
+            app:layout_constraintStart_toStartOf="@id/midcolstart"
+            app:layout_constraintTop_toBottomOf="@id/nicotinequestion">
+
+
+            <ImageView
+                android:id="@+id/nevericonnictine"
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_nico"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/i_never_had_nicotine"
+                android:textAlignment="center"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nevericonnictine"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nonicotine"
+            android:layout_width="0dp"
+
+            android:layout_height="135dp"
+            android:layout_marginTop="@dimen/dp30"
+            android:background="@drawable/moodbackground"
+            android:elevation="0.4dp"
+            android:paddingBottom="@dimen/dp15"
+            android:shadowColor="@color/color26165DE8"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="13.65"
+            app:layout_constraintStart_toStartOf="@id/lastcolstart"
+            app:layout_constraintEnd_toEndOf="@id/lastcolend"
+            app:layout_constraintTop_toBottomOf="@id/nicotinequestion">
+
+
+            <ImageView
+                android:id="@+id/noiconnicotine"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/ic_no"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
+                android:text="@string/no"
+                android:textColor="@color/color231F20"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/noiconnicotine"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/firstcolstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/firstcolend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.32" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/midcolstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.365" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/midcolend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.635" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lastcolstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.68" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lastcolend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

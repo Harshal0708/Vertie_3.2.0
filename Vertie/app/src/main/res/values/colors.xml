@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="border">#D9D9D9</color>
+    <color name="hint">#ABABAB</color>
+
+    <color name="colorPrimary">#2C72F9</color>
+    <color name="colorPrimaryDark">@color/color165DE8</color>
+    <color name="colorAccent">@color/white</color>
+    <color name="colorBackground">#E5E5E5</color>
+    <!--    <color name="mtrl_textinput_default_box_stroke_color">@color/colorTransparentWhiteHalf</color>-->
+
+    <color name="white">#ffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="grey3">#8698B7</color>
+
+    <!--    <color name="colorPrimary">#000</color>-->
+    <!--    <color name="colorSurface">#000000</color>-->
+    <!--    <color name="colorOnSurface">#000</color>-->
+    <!--    <color name="colorBackground">#000</color>-->
+    <!--    <color name="colorOnBackground">#000</color>-->
+    <!--    <color name="colorValue">#000</color>-->
+    <!--    <color name="colorA">#000</color>-->
+    <!--    <color name="colorB">#000</color>-->
+    <!--    <color name="colorC">#000</color>-->
+    <!--    <color name="colorD">#000</color>-->
+    <!--    <color name="colorOnValue">#000</color>-->
+
+    <!--<color name="searchDialogResultColor">@color/color263238</color>-->
+    <!--<color name="searchDialogResultHighlightColor">@color/colorB81E6C</color>-->
+    <color name="color2C72F9">#2C72F9</color>
+    <color name="color165DE8">#165DE8</color>
+    <color name="colorTransparentHalfBlack">#88000000</color>
+    <color name="colorEFEFF0">#EFEFF0</color>
+    <color name="colorFF2943">#FF2943</color>
+    <color name="colorTransparentWhiteHalf">#88FFFFFF</color>
+    <color name="colorF8FAFB">#F8FAFB</color>
+    <color name="color231F20op60">#99231F20</color>
+    <color name="color231F20op20">#33231F20</color>
+    <color name="color231F20">#231F20</color>
+    <color name="textColor">#165EE8</color>
+
+    <color name="Blackop20">#33000000</color>
+    <color name="color0D256CF4">#0D256CF4</color>
+    <color name="color26165DE8">#26165DE8</color>
+    <color name="colorBEBDBD">#BEBDBD</color>
+
+    <!--vertie SDK colors-->
+    <color name="color_value_a">#31bfde</color>
+    <color name="color_value_b">#36cb83</color>
+    <color name="color_value_c">#ffb629</color>
+    <color name="color_value_d">#ff6c4c</color>
+    <color name="color_on_value">#ffffff</color>
+
+</resources>

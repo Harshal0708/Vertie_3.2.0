@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    style="@style/ResultBackground_kk">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginStart="@dimen/result_margin_kk"
+            android:layout_marginEnd="@dimen/result_margin_kk"
+            android:layout_marginBottom="92dp"
+            android:orientation="vertical"
+            app:flow_maxElementsWrap="1"
+            app:flow_horizontalBias="0"
+            app:flow_verticalGap="20dp"
+            app:constraint_referenced_ids="header_card, result_cards, meaning_card, details_card, finish_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <de.kenkou.sdk.visual.result.card.HeaderCard
+            android:id="@+id/header_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/result_cards"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:flow_maxElementsWrap="2"
+            app:flow_horizontalGap="12dp"
+            app:flow_verticalGap="12dp"
+            app:flow_wrapMode="chain"
+            app:flow_verticalAlign="top"
+            app:constraint_referenced_ids="stress_index_card, recovery_card, pulse_card, mood_card"
+            tools:ignore="MissingConstraints" />
+
+        <de.kenkou.sdk.visual.result.card.StressIndexCard
+            android:id="@+id/stress_index_card"
+            style="@style/ResultCard_kk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <de.kenkou.sdk.visual.result.card.RecoveryCard
+            android:id="@+id/recovery_card"
+            style="@style/ResultCard_kk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
+
+        <de.kenkou.sdk.visual.result.card.PulseCard
+            android:id="@+id/pulse_card"
+            style="@style/ResultCard_kk"
+            android:layout_width="0dp"
+            android:layout_height="176dp"
+            tools:ignore="MissingConstraints" />
+
+        <de.kenkou.sdk.visual.result.card.MoodCard
+            android:id="@+id/mood_card"
+            style="@style/ResultCard_kk"
+            android:layout_width="0dp"
+            android:layout_height="176dp"
+            tools:ignore="MissingConstraints" />
+
+        <de.kenkou.sdk.visual.result.card.MeasurementMeaningCard
+            android:id="@+id/meaning_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
+
+        <de.kenkou.sdk.visual.result.card.MeasurementDetailsCard
+            android:id="@+id/details_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/finish_button"
+            style="@style/ButtonProceed_kk"
+            android:layout_marginBottom="24dp"
+            android:text="@string/result_finish_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

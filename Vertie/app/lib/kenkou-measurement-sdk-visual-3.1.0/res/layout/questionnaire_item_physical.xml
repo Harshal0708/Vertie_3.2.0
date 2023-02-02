@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/questionnaire_physical_title"
+            style="@style/QuestionnaireScreenTitle_kk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questionnaire_physically" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.kenkou.sdk.visual.views.SelectableFlow
+                android:id="@+id/physical_items"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:constraint_referenced_ids="physically_great,physically_tired,physically_sick,physically_pain"
+                app:flow_horizontalGap="16dp"
+                app:flow_maxElementsWrap="2"
+                app:flow_verticalGap="12dp"
+                app:flow_wrapMode="chain"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_max="280dp" />
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/physically_great"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/physically_great"
+                app:image="@drawable/questionnaire_physically_great"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_physically_great"
+                        android:tint="@color/moodO"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/physically_great"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/physically_tired"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/physically_tired"
+                app:image="@drawable/questionnaire_physically_tired"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_physically_tired"
+                        android:tint="@color/moodG"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/physically_tired"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/physically_sick"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/physically_sick"
+                app:image="@drawable/questionnaire_physically_sick"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_physically_sick"
+                        android:tint="@color/moodH"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/physically_sick"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+
+            <de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard
+                android:id="@+id/physically_pain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/physically_pain"
+                app:image="@drawable/questionnaire_physically_pain"
+                tools:ignore="MissingConstraints" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/questionnaire_physically_pain"
+                        android:tint="@color/moodB"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/physically_pain"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp18"/>
+                </LinearLayout>
+            </de.kenkou.sdk.visual.measurementquestionnaire.view.MeasurementQuestionnaireCard>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/questionnaire_physical_note_title"
+            style="@style/QuestionnaireScreenTitle_kk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/questionnaire_physically_details" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/physical_note_layout"
+            style="@style/QuestionnaireInputLayout_kk"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:hint="@string/questionnaire_physically_hint"
+            android:maxWidth="280dp"
+            app:startIconDrawable="@drawable/physical_note">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/physical_note"
+                style="@style/QuestionnaireInputField_kk"
+                android:lines="1"
+                android:imeOptions="actionDone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+</ScrollView>

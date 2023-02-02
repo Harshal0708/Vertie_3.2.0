@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appname">Vertie</string>
+    <!--offline messages-->
+    <!--http error messages-->
+    <string name="serverError">Internal Server error</string>
+    <string name="authError">An authentication error has occurred</string>
+    <string name="notFound">Not found error has occurred</string>
+    <string name="genericNetworkError">An Error has occurred</string>
+    <string name="connectionError">Error connecting to the internet</string>
+    <string name="ok">OK</string>
+    <!--gallery-->
+    <string name="wrongUsernameOrPassword">Wrong Username or password</string>
+    <!--Login_page-->
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="forgot_password">Forget Password</string>
+    <string name="log_in">Log In</string>
+    <string name="logo">Logo</string>
+
+    <!--Bottom_Navigation_Bar-->
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="proxy">Proxy User</string>
+
+    <!--Add_New_Measurement-->
+    <string name="measure">Measure</string>
+    <string name="emailisnotvalid">Email is not valid</string>
+    <string name="emailrequired">Email is required</string>
+    <string name="passwordrequired">Password is required</string>
+
+
+    <!--    <string name="app_name">MPAndroidChart Example</string>-->
+
+    <string name="day">DAY</string>
+    <string name="month">Month</string>
+    <string name="week">Week</string>
+</resources>

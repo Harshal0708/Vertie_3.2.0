@@ -1,0 +1,78 @@
+<resources>
+    <string name="appname">Vertie</string>
+    <!--offline messages-->
+    <!--http error messages-->
+    <string name="serverError">Internal Server error</string>
+    <string name="authError">An authentication error has occurred</string>
+    <string name="notFound">Not found error has occurred</string>
+    <string name="genericNetworkError">An Error has occurred</string>
+    <string name="connectionError">Error connecting to the internet</string>
+    <string name="ok">OK</string>
+    <!--gallery-->
+    <string name="wrongUsernameOrPassword">Wrong Username or password</string>
+    <!--Login_page-->
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="forgot_password">Forget Password</string>
+    <string name="log_in">Log In</string>
+    <string name="logo">Logo</string>
+
+    <!--Bottom_Navigation_Bar-->
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="proxy">Proxy User</string>
+
+    <!--Add_New_Measurement-->
+    <string name="measure">Measure</string>
+    <string name="analyze">Analyze</string>
+    <string name="how_are_you_feeling_today">How are you feeling today?</string>
+    <string name="happy">Happy</string>
+    <string name="good">Good</string>
+    <string name="ok_mood">Ok</string>
+    <string name="bad">Bad</string>
+    <string name="what_did_you_do_before_measurement">What did you do before measurement?</string>
+    <string name="read">Read</string>
+    <string name="work">Work</string>
+    <string name="holiday">Holiday</string>
+    <string name="physical_labor">Physical labor</string>
+    <string name="meditation">Meditation</string>
+    <string name="sleep">Sleep</string>
+    <string name="learn">Learn</string>
+    <string name="exercise">Exercise</string>
+    <string name="walk">Walk</string>
+    <string name="fantastic">Fantastic</string>
+    <string name="tired">Tired</string>
+    <string name="sick">Sick</string>
+    <string name="tense">Tense</string>
+    <string name="how_do_you_feel_physically">How do you feel physically?</string>
+    <string name="could_you_give_a_details_description">Could you give a details description</string>
+    <string name="today_i_feel">Today i feel</string>
+    <string name="next">Next</string>
+    <string name="did_you_havee_any_caffaine_1_hour_before_the_measurement">Did you have any caffeine 1 hour before the measurement?</string>
+    <string name="yes">Yes</string>
+    <string name="i_never_have_caffeine">I never have caffeine</string>
+    <string name="no">No</string>
+    <string name="i_never_had_nicotine">I never had nicotine</string>
+    <string name="did_you_have_any_nicotine_1_hour_before_the_measurement">Did you have any nicotine 1 hour before the measurement?</string>
+
+    <string name="emailisnotvalid">Email is not valid</string>
+    <string name="emailrequired">Email is required</string>
+    <string name="passwordrequired">Password is required</string>
+    <string name="put_your_finger_on_camera">Put your finger on camera</string>
+    <string name="how_to_measure">How to Measure</string>
+    <string name="start">Start</string>
+    <string name="add_manual">Add Manual</string>
+    <!--    <string name="day">Today</string>-->
+    <!--    <string name="month">This Month</string>-->
+    <!--    <string name="week">This Week</string>-->
+    <string name="day">DAY</string>
+    <string name="month">Month</string>
+    <string name="week">Week</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <!--    <string name="app_name">MPAndroidChart Example</string>-->
+
+
+</resources>

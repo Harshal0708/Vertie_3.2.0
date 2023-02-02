@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MeasurementBackground_kk"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/measurement_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/measurement_quality_bad"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        app:layout_constraintTop_toBottomOf="@+id/skip_text_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/skip_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="?selectableItemBackground"
+        android:gravity="center"
+        android:paddingStart="12dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp"
+        android:text="Skip\n(debug only)"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <de.kenkou.sdk.visual.measurement.view.ProgressView
+        android:id="@+id/measurement_progress"
+        android:layout_width="164dp"
+        android:layout_height="164dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/preview_container"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="42dp"
+        app:layout_constraintBottom_toBottomOf="@+id/measurement_progress"
+        app:layout_constraintEnd_toEndOf="@id/measurement_progress"
+        app:layout_constraintStart_toStartOf="@id/measurement_progress"
+        app:layout_constraintTop_toTopOf="@+id/measurement_progress">
+
+        <de.kenkou.sdk.headless.core.camera.CameraView
+            android:id="@+id/camerax_preview"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            app:layout_constraintBottom_toBottomOf="@+id/measurement_progress"
+            app:layout_constraintEnd_toEndOf="@id/measurement_progress"
+            app:layout_constraintStart_toStartOf="@id/measurement_progress"
+            app:layout_constraintTop_toTopOf="@+id/measurement_progress" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/pulse"
+        style="@style/MeasurementPulse_kk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationZ="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/preview_container"
+        app:layout_constraintEnd_toEndOf="@id/preview_container"
+        app:layout_constraintStart_toStartOf="@id/preview_container"
+        app:layout_constraintTop_toTopOf="@+id/preview_container"
+        app:layout_constraintVertical_bias="0.45"
+        tools:text="178" />
+
+    <TextView
+        android:id="@+id/pulse_label"
+        style="@style/MeasurementPulseLabel_kk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/measurement_pulse_label"
+        android:translationZ="2dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/pulse"
+        app:layout_constraintStart_toStartOf="@+id/pulse"
+        app:layout_constraintTop_toBottomOf="@id/pulse" />
+
+    <TextView
+        android:id="@+id/congratulation"
+        style="@style/MeasurementWellDone_kk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/measurement_congratulation"
+        app:layout_constraintBottom_toBottomOf="@+id/measurement_progress"
+        app:layout_constraintEnd_toEndOf="@+id/measurement_progress"
+        app:layout_constraintStart_toStartOf="@+id/measurement_progress"
+        app:layout_constraintTop_toTopOf="@+id/measurement_progress" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/luminance_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <de.kenkou.sdk.visual.measurement.view.PulseWaveChart
+        android:id="@+id/luminance_chart"
+        style="@style/MeasurementPulseWave_kk"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="16dp"
+        app:chart_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/luminance_guide" />
+
+    <TextView
+        android:id="@+id/signal_quality_label"
+        style="@style/MeasurementQualityLabel_kk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/measurement_quality"
+        app:layout_constraintBottom_toTopOf="@+id/signal_quality"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <de.kenkou.sdk.visual.measurement.view.SignalQualityGraph
+        android:id="@+id/signal_quality"
+        android:layout_width="150dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/message"
+        style="@style/MeasurementQualityText_kk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Place your finger on the camera" />
+
+    <TextView
+        android:id="@+id/debugOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#4DFFFFFF"
+        android:clickable="false"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Debug output" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
