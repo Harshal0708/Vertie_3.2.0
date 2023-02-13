@@ -36,11 +36,11 @@ class LoginViewModel @Inject constructor(
 
     fun login(){
 
-        email.value = "sachin.prajapati0533@gmail.com"
-        password.value = "P@ssw0rd"
+//        email.value = "sachin.prajapati0533@gmail.com"
+//        password.value = "P@ssw0rd"
 
-//        email.value = "loricmarshall16@gmail.com"
-//        password.value = "M490RN8"
+        email.value = "loricmarshall16@gmail.com"
+        password.value = "M490RN8"
 
         var enter : Boolean = true
 
@@ -105,11 +105,6 @@ class LoginViewModel @Inject constructor(
                 })
         )
     }
-
-//    fun saveToSession(user : User,token : String){
-//        session.token = token
-//        session.currentUser = user
-//    }
 
     fun loginRequest() : LoginRequest{
         return LoginRequest(

@@ -252,7 +252,7 @@ class QuestionThreeActivity : AppCompatActivity() {
 
     private fun nextBTN() {
         if (setData()) {
-            resultLauncher.launch(Intent(this@QuestionThreeActivity, QuestionFourActivity::class.java))
+            resultLauncher.launch(Intent(this, QuestionFourActivity::class.java))
         }
     }
 

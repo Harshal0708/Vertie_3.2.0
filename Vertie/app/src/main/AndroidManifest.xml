@@ -24,6 +24,14 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:label">
         <activity
+            android:name=".javacode.MainSelectActivity"
+            android:exported="true" >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
             android:name=".modules.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
@@ -31,30 +39,27 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-<!--        <activity-->
-<!--            android:name=".modules.template.TemplateActivity"-->
-<!--            android:exported="true"-->
-<!--            android:launchMode="singleTop"-->
-<!--            android:theme="@style/AppTheme.NoActionBar" />-->
-<!--        <activity-->
-<!--            android:name=".modules.analyze1.Analyze1Activity"-->
-<!--            android:exported="true"-->
-<!--            android:launchMode="singleTop" />-->
-<!--        <activity-->
-<!--            android:name=".modules.analyze2.Analyze2Activity"-->
-<!--            android:exported="true"-->
-<!--            android:launchMode="singleTop" />-->
-<!--        <activity-->
-<!--            android:name=".modules.analyze3.Analyze3Activity"-->
-<!--            android:exported="true"-->
-<!--            android:launchMode="singleTop" />-->
-<!--        <activity-->
-<!--            android:name=".modules.analyze4.Analyze4Activity"-->
-<!--            android:exported="true"-->
-<!--            android:launchMode="singleTop" />-->
-
+        </activity> <!-- <activity -->
+        <!-- android:name=".modules.template.TemplateActivity" -->
+        <!-- android:exported="true" -->
+        <!-- android:launchMode="singleTop" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
+        <!-- <activity -->
+        <!-- android:name=".modules.analyze1.Analyze1Activity" -->
+        <!-- android:exported="true" -->
+        <!-- android:launchMode="singleTop" /> -->
+        <!-- <activity -->
+        <!-- android:name=".modules.analyze2.Analyze2Activity" -->
+        <!-- android:exported="true" -->
+        <!-- android:launchMode="singleTop" /> -->
+        <!-- <activity -->
+        <!-- android:name=".modules.analyze3.Analyze3Activity" -->
+        <!-- android:exported="true" -->
+        <!-- android:launchMode="singleTop" /> -->
+        <!-- <activity -->
+        <!-- android:name=".modules.analyze4.Analyze4Activity" -->
+        <!-- android:exported="true" -->
+        <!-- android:launchMode="singleTop" /> -->
         <activity
             android:name=".activity.QuestionSevenIntroActivity"
             android:exported="false"
@@ -100,7 +105,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.QuestionSevenActivity"
+            android:name=".activity.QuestionFiveActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -116,7 +121,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.QuestionFiveActivity"
+            android:name=".activity.QuestionSevenActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

@@ -111,244 +111,59 @@
             app:layout_constraintStart_toStartOf="@+id/left"
             app:layout_constraintTop_toBottomOf="@+id/icon2" />
 
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/right"
+            app:layout_constraintStart_toStartOf="@+id/left"
+            app:layout_constraintTop_toBottomOf="@+id/question_two_txt_name3"
+            android:gravity="center"
+            android:background="@drawable/bk_bottom_selector"
+            android:layout_margin="@dimen/dp20"
+            android:padding="@dimen/dp20">
+            <TextView
+                android:id="@+id/tvSiteType"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Site type"
+                android:fontFamily="@font/robotobold"
+                android:textAlignment="textStart"
+                android:textColor="@color/color231F20"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_point_to_right2"
+                />
+        </LinearLayout>
+
+
+
         <TextView
             android:id="@+id/question_two_txt_name4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/robotobold"
-            android:text="Site type"
+            android:text="What does it look or feel like?\n Choose all that apply"
             android:textAlignment="center"
             android:textColor="@color/color231F20"
             app:layout_constraintEnd_toStartOf="@+id/right"
             app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_two_txt_name3"
+            app:layout_constraintTop_toBottomOf="@+id/ll"
             />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_cons_1"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSetp7"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/question_background_1"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintEnd_toStartOf="@+id/right"
             app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_two_txt_name4">
-            <TextView
-                android:id="@+id/question_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:text="Hot to touch"
-                android:textAlignment="center"
-                android:textColor="@color/color231F20"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/question_view_img_1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/question_view_img_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:padding="4dp"
-                android:background="@drawable/truebuttonbackground"
-                android:src="@drawable/ic_true_2"
-                app:tint="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/question_1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/question_1" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_cons_2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/question_background_1"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintEnd_toStartOf="@+id/right"
-            app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_cons_1">
-
-            <TextView
-                android:id="@+id/question_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:text="Painful and hurts"
-                android:textAlignment="center"
-                android:textColor="@color/color231F20"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/question_view_img_2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/question_view_img_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:padding="4dp"
-                android:background="@drawable/truebuttonbackground"
-                android:src="@drawable/ic_true_2"
-                app:tint="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/question_2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/question_2" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_cons_3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/question_background_1"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintEnd_toStartOf="@+id/right"
-            app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_cons_2">
-
-            <TextView
-                android:id="@+id/question_3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:text="Swollen"
-                android:textAlignment="center"
-                android:textColor="@color/color231F20"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/question_view_img_3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/question_view_img_3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:padding="4dp"
-                android:background="@drawable/truebuttonbackground"
-                android:src="@drawable/ic_true_2"
-                app:tint="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/question_3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/question_3" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_cons_4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/question_background_1"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintEnd_toStartOf="@+id/right"
-            app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_cons_3">
-
-            <TextView
-                android:id="@+id/question_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:text="Bleeding"
-                android:textAlignment="center"
-                android:textColor="@color/color231F20"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/question_view_img_4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/question_view_img_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:padding="4dp"
-                android:background="@drawable/truebuttonbackground"
-                android:src="@drawable/ic_true_2"
-                app:tint="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/question_4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/question_4" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_cons_5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/question_background_1"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintEnd_toStartOf="@+id/right"
-            app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_cons_4">
-
-            <TextView
-                android:id="@+id/question_5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:text="Draining pus or fluids"
-                android:textAlignment="center"
-                android:textColor="@color/color231F20"
-                android:textSize="14sp"
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/question_view_img_5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/question_view_img_5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:padding="4dp"
-                android:background="@drawable/truebuttonbackground"
-                android:src="@drawable/ic_true_2"
-                app:tint="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/question_5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/question_5" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@+id/question_two_txt_name4"/>
 
 
-        <!--        <TextView-->
-<!--            android:id="@+id/question_two_txt_name4"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:fontFamily="@font/robotobold"-->
-<!--            android:text="Site type"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="@color/color231F20"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/right"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/left"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/question_two_txt_name3"-->
-<!--            />-->
 
         <Button
             android:id="@+id/question_view_finish2"
@@ -365,7 +180,7 @@
             app:layout_constraintEnd_toStartOf="@+id/right"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_cons_5" />
+            app:layout_constraintTop_toBottomOf="@+id/rvSetp7" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

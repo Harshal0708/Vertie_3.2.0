@@ -63,175 +63,14 @@
             app:layout_constraintStart_toStartOf="@+id/left"
             app:layout_constraintTop_toBottomOf="@+id/question_view" />
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_two_cons_1"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStep4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/question_background_1"
             app:layout_constraintEnd_toStartOf="@+id/right"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_two_txt_name1">
-
-            <TextView
-                android:id="@+id/question_two_date"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:text="Burning"
-                android:textAlignment="center"
-                android:textColor="@color/color231F20"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/question_view_img_1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/question_view_img_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:padding="4dp"
-                android:background="@drawable/truebuttonbackground"
-                android:src="@drawable/ic_true_2"
-                app:tint="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/question_two_date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/question_two_date" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_two_cons_2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/question_background_1"
-            app:layout_constraintEnd_toStartOf="@+id/right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_two_cons_1">
-
-            <TextView
-                android:id="@+id/question_two_date_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:text="Going to the bathroom more"
-                android:textAlignment="center"
-                android:textColor="@color/color231F20"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/question_view_img_2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/question_view_img_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:padding="4dp"
-                android:background="@drawable/truebuttonbackground"
-                android:src="@drawable/ic_true_2"
-                app:tint="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/question_two_date_2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/question_two_date_2" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_two_cons_3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/question_background_1"
-            app:layout_constraintEnd_toStartOf="@+id/right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_two_cons_2">
-
-            <TextView
-                android:id="@+id/question_two_date_3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:text="Blood in urine"
-                android:textAlignment="center"
-                android:textColor="@color/color231F20"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/question_view_img_3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/question_view_img_3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:padding="4dp"
-                android:background="@drawable/truebuttonbackground"
-                android:src="@drawable/ic_true_2"
-                app:tint="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/question_two_date_3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/question_two_date_3" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_two_cons_4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/question_background_1"
-            app:layout_constraintEnd_toStartOf="@+id/right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_two_cons_3">
-
-            <TextView
-                android:id="@+id/question_two_date_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:padding="12dp"
-                android:text="Difficulty urinating"
-                android:textAlignment="center"
-                android:textColor="@color/color231F20"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/question_view_img_4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/question_view_img_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:padding="4dp"
-                android:background="@drawable/truebuttonbackground"
-                android:src="@drawable/ic_true_2"
-                app:tint="@color/white"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/question_two_date_4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/question_two_date_4" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@+id/question_two_txt_name1" />
 
         <include
             android:id="@+id/question_view_2"
@@ -242,7 +81,7 @@
             app:layout_constraintBottom_toTopOf="@+id/bottom"
             app:layout_constraintEnd_toStartOf="@+id/right"
             app:layout_constraintStart_toStartOf="@+id/left"
-            app:layout_constraintTop_toBottomOf="@+id/question_two_cons_4"
+            app:layout_constraintTop_toBottomOf="@+id/rvStep4"
             app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

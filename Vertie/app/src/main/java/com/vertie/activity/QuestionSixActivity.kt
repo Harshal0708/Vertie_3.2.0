@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.slider.Slider
 import com.google.gson.GsonBuilder
 import com.vertie.Constants
 import com.vertie.R
@@ -24,9 +25,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.math.roundToInt
 
-
-//https://github.com/warkiz/IndicatorSeekBar
 class QuestionSixActivity : AppCompatActivity() {
 
     private lateinit var question_view: View
@@ -37,22 +37,52 @@ class QuestionSixActivity : AppCompatActivity() {
     private lateinit var question_view_next: Button
     private lateinit var question_view_finish: Button
 
+    private lateinit var continuousSlider: Slider
+
     private var currentProgressBar: Int = 0
-//    lateinit var seekBarDiscrete: IndicatorSeekBar
+
+    //    lateinit var seekBarDiscrete: IndicatorSeekBar
     var questionsArrList = arrayListOf<QuestionsObj>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_six)
 
 //        41aa8ff3-a10a-4698-8362-e94092b2342a	numberscale
-        questionsArrList = SingletonClass.getInstance()!!.questionsArrListData
-                Init()
+        try {
+            questionsArrList = SingletonClass.getInstance()!!.questionsArrListData
+        } catch (e: NullPointerException) {
+        }
+        Init()
+
+
+        continuousSlider.setLabelFormatter { value: Float ->
+            return@setLabelFormatter "$${value.roundToInt()}"
+        }
+        continuousSlider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
+            override fun onStartTrackingTouch(slider: Slider) {
+                // Responds to when slider's touch event is being started
+                Log.d("onStartTrackingTouch", slider.value.toString())
+            }
+
+            override fun onStopTrackingTouch(slider: Slider) {
+                // Responds to when slider's touch event is being stopped
+                Log.d("onStopTrackingTouch", slider.value.toString())
+            }
+        })
+        continuousSlider.addOnChangeListener(object : Slider.OnChangeListener {
+            override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
+                Log.d("addOnChangeListener", slider.value.toString())
+            }
+        })
     }
 
     private fun Init() {
         question_view = findViewById(R.id.question_view)
-        question_view.findViewById<ImageView>(R.id.question_view_img).setOnClickListener { finish() }
+        question_view.findViewById<ImageView>(R.id.question_view_img)
+            .setOnClickListener { finish() }
         question_view_2 = findViewById(R.id.question_view_2)
+
+        continuousSlider = findViewById(R.id.continuousSlider)
 
         question_view_text = question_view.findViewById(R.id.question_view_text)
         question_view_progressBar = question_view.findViewById(R.id.question_view_progressBar)
@@ -64,7 +94,7 @@ class QuestionSixActivity : AppCompatActivity() {
 
         question_view_progressBar.visibility = View.VISIBLE
         currentProgressBar = 60
-        question_view_progressBar.setProgress(currentProgressBar)
+        question_view_progressBar.progress = currentProgressBar
         question_view_progressBar.max = 70
 
 //        seekBarDiscrete?.setOnSeekBarChangeListener(object :SeekBar.OnSeekBarChangeListener{
@@ -106,7 +136,7 @@ class QuestionSixActivity : AppCompatActivity() {
 //            .trackBackgroundSize(2)
 //            .onlyThumbDraggable(false)
 //            .build()
-            
+
 
 //        seekBarDiscrete.setOnSeekChangeListener(object : OnSeekChangeListener {
 //            override fun onSeeking(seekParams: SeekParams) {
@@ -130,7 +160,12 @@ class QuestionSixActivity : AppCompatActivity() {
         question_view_next.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 if (setData()) {
-                    resultLauncher.launch(Intent(this@QuestionSixActivity, QuestionSevenActivity::class.java))
+                    resultLauncher.launch(
+                        Intent(
+                            this@QuestionSixActivity,
+                            QuestionSevenActivity::class.java
+                        )
+                    )
                 }
             }
         })
@@ -142,27 +177,30 @@ class QuestionSixActivity : AppCompatActivity() {
             }
         }
 
-        question_view_2.findViewById<TextView>(R.id.question_txt_name2).setOnClickListener(object :View.OnClickListener{
-            override fun onClick(p0: View?) {
-               skipBTN()
+        question_view_2.findViewById<TextView>(R.id.question_txt_name2)
+            .setOnClickListener(object : View.OnClickListener {
+                override fun onClick(p0: View?) {
+                    skipBTN()
+                }
+            })
+
+    }
+
+    var resultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                setResult(Activity.RESULT_OK, Intent())
+                finish()
             }
-        })
-
-    }
-
-    var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            setResult(Activity.RESULT_OK, Intent())
-            finish()
         }
-    }
 
-    private fun skipBTN(){
+    private fun skipBTN() {
         resultLauncher.launch(Intent(this@QuestionSixActivity, QuestionSevenActivity::class.java))
     }
 
-    private fun nextBTN(){
-        SingletonClass.getInstance().questionsArrListData = SingletonClass.getInstance().questionsArrListData
+    private fun nextBTN() {
+        SingletonClass.getInstance().questionsArrListData =
+            SingletonClass.getInstance().questionsArrListData
         resultLauncher.launch(Intent(this@QuestionSixActivity, QuestionSevenActivity::class.java))
     }
 
@@ -185,13 +223,13 @@ class QuestionSixActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if( requestCode ==2 && resultCode ==2 ){
+        if (requestCode == 2 && resultCode == 2) {
             setResult(2, Intent())
             finish()
         }
     }
 
-    private fun apiCall(){
+    private fun apiCall() {
         var preferences: SharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE)
         val uId: String? = preferences.getString(UserPersistanceContract.UserEntry.USER_ID, null)
         val mapFields = java.util.HashMap<String, Any?>()
@@ -212,7 +250,7 @@ class QuestionSixActivity : AppCompatActivity() {
             call.enqueue(object : Callback<Any?> {
                 override fun onResponse(call: Call<Any?>, response: Response<Any?>) {
                     Globals.hideProgressDialog()
-                    if(response.body() as Boolean){
+                    if (response.body() as Boolean) {
 //                        val intent = Intent()
 //                        setResult(2, intent)
 //                        finish()
@@ -220,6 +258,7 @@ class QuestionSixActivity : AppCompatActivity() {
                         Globals.AddMenualRecord(this@QuestionSixActivity)
                     }
                 }
+
                 override fun onFailure(call: Call<Any?>, t: Throwable) {
                     Globals.hideProgressDialog()
                 }

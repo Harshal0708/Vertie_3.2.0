@@ -65,7 +65,12 @@ class QuestionTwoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_two)
-        questionsArrList = SingletonClass.getInstance()!!.questionsArrListData
+
+        try {
+            questionsArrList = SingletonClass.getInstance()!!.questionsArrListData
+        }catch (e:NullPointerException){
+        }
+
         Init()
         updateDateInView()
     }

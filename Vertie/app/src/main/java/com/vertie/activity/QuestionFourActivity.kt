@@ -10,10 +10,14 @@ import android.view.View
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.GsonBuilder
 import com.vertie.Constants
 import com.vertie.R
 import com.vertie.data.user.source.local.UserPersistanceContract
+import com.vertie.javacode.ListItem
+import com.vertie.javacode.ListItemSelectionAdapter
 import com.vertie.javacode.apiManager.APIManager
 import com.vertie.javacode.models.QuestionsObj
 import com.vertie.javacode.singleton.SingletonClass
@@ -23,7 +27,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 
-class QuestionFourActivity : AppCompatActivity() {
+class QuestionFourActivity : AppCompatActivity(), ListItemSelectionAdapter.OnClickListner {
     private lateinit var question_view: View
 
     private lateinit var question_view_2: View
@@ -32,32 +36,38 @@ class QuestionFourActivity : AppCompatActivity() {
     private lateinit var question_view_next: Button
     private lateinit var question_view_finish: Button
 
-    private lateinit var question_two_cons_1: ConstraintLayout
-    private lateinit var question_two_cons_2: ConstraintLayout
-    private lateinit var question_two_cons_3: ConstraintLayout
-    private lateinit var question_two_cons_4: ConstraintLayout
-
-    private lateinit var question_view_img_1: ImageView
-    private lateinit var question_view_img_2: ImageView
-    private lateinit var question_view_img_3: ImageView
-    private lateinit var question_view_img_4: ImageView
-
-    private lateinit var question_two_date: TextView
-    private lateinit var question_two_date_2: TextView
-    private lateinit var question_two_date_3: TextView
-    private lateinit var question_two_date_4: TextView
-
     private lateinit var type1Select: String
 
     private var currentProgressBar: Int = 0
-
+    private var recyclerView: RecyclerView? = null
     var questionsArrList = arrayListOf<QuestionsObj>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_four)
 
-        questionsArrList = SingletonClass.getInstance()!!.questionsArrListData
+        try {
+            questionsArrList = SingletonClass.getInstance()!!.questionsArrListData
+        }catch (e:NullPointerException){
+        }
         InIt()
+        recyclerView = findViewById(R.id.rvStep4)
+
+        val stressAndCopingList = arrayOf(
+            ListItem("1", "Burning", "", false),
+            ListItem("2", "Going to the bathroom mor", "", false),
+            ListItem("3", "Blood in urine", "", false),
+            ListItem("4", "Difficulty urinating", "", false),
+        )
+
+        recyclerView!!.setHasFixedSize(true)
+        recyclerView!!.layoutManager = LinearLayoutManager(this)
+        val adapter =
+            ListItemSelectionAdapter(
+                this,
+                stressAndCopingList
+            )
+        recyclerView!!.adapter = adapter
+        adapter.setOnClickListner(this)
     }
 
     private fun InIt() {
@@ -69,21 +79,6 @@ class QuestionFourActivity : AppCompatActivity() {
         question_view_text = question_view.findViewById(R.id.question_view_text)
         question_view_progressBar = question_view.findViewById(R.id.question_view_progressBar)
 
-        question_two_cons_1 = findViewById(R.id.question_two_cons_1)
-        question_two_cons_2 = findViewById(R.id.question_two_cons_2)
-        question_two_cons_3 = findViewById(R.id.question_two_cons_3)
-        question_two_cons_4 = findViewById(R.id.question_two_cons_4)
-
-        question_view_img_1 = findViewById(R.id.question_view_img_1)
-        question_view_img_2 = findViewById(R.id.question_view_img_2)
-        question_view_img_3 = findViewById(R.id.question_view_img_3)
-        question_view_img_4 = findViewById(R.id.question_view_img_4)
-
-        question_two_date = findViewById(R.id.question_two_date)
-        question_two_date_2 = findViewById(R.id.question_two_date_2)
-        question_two_date_3 = findViewById(R.id.question_two_date_3)
-        question_two_date_4 = findViewById(R.id.question_two_date_4)
-
         question_view_next = question_view_2.findViewById(R.id.question_view_next)
         question_view_finish = question_view_2.findViewById(R.id.question_view_finish)
         question_view_text.text = Constants.step4
@@ -93,101 +88,12 @@ class QuestionFourActivity : AppCompatActivity() {
         question_view_progressBar.setProgress(currentProgressBar)
         question_view_progressBar.max = 70
 
-        question_two_cons_1.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                question_two_cons_1.setBackgroundResource(R.drawable.question_background_select_2)
-                question_view_img_1.visibility = View.VISIBLE
-                question_two_date.setTextColor(getColor(R.color.textColor))
-
-                question_two_cons_2.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_2.visibility = View.GONE
-                question_two_date_2.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_3.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_3.visibility = View.GONE
-                question_two_date_3.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_4.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_4.visibility = View.GONE
-                question_two_date_4.setTextColor(getColor(R.color.color231F20))
-
-                type1Select = "Burning"
-            }
-
-        })
-
-        question_two_cons_2.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                question_two_cons_2.setBackgroundResource(R.drawable.question_background_select_2)
-                question_view_img_2.visibility = View.VISIBLE
-                question_two_date_2.setTextColor(getColor(R.color.textColor))
-
-                question_two_cons_1.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_1.visibility = View.GONE
-                question_two_date.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_3.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_3.visibility = View.GONE
-                question_two_date_3.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_4.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_4.visibility = View.GONE
-                question_two_date_4.setTextColor(getColor(R.color.color231F20))
-                type1Select = "Going to the bathroom more"
-            }
-
-        })
-
-        question_two_cons_3.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                question_two_cons_3.setBackgroundResource(R.drawable.question_background_select_2)
-                question_view_img_3.visibility = View.VISIBLE
-                question_two_date_3.setTextColor(getColor(R.color.textColor))
-
-                question_two_cons_1.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_1.visibility = View.GONE
-                question_two_date.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_2.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_2.visibility = View.GONE
-                question_two_date_2.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_4.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_4.visibility = View.GONE
-                question_two_date_4.setTextColor(getColor(R.color.color231F20))
-                type1Select = "Blood in urine"
-            }
-
-        })
-
-        question_two_cons_4.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                question_two_cons_4.setBackgroundResource(R.drawable.question_background_select_2)
-                question_view_img_4.visibility = View.VISIBLE
-                question_two_date_4.setTextColor(getColor(R.color.textColor))
-
-                question_two_cons_1.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_1.visibility = View.GONE
-                question_two_date.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_2.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_2.visibility = View.GONE
-                question_two_date_2.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_3.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_3.visibility = View.GONE
-                question_two_date_3.setTextColor(getColor(R.color.color231F20))
-                type1Select = "Difficulty urinating"
-            }
-        })
-
         question_view_next.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 nextBTN()
             }
 
         })
-
 
         question_view_finish.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
@@ -212,8 +118,6 @@ class QuestionFourActivity : AppCompatActivity() {
     private fun skipBTN() {
         resultLauncher.launch(Intent(this@QuestionFourActivity, QuestionFiveActivity::class.java))
     }
-
-
     private fun nextBTN() {
         if (setData()) {
             resultLauncher.launch(Intent(this@QuestionFourActivity, QuestionFiveActivity::class.java))
@@ -226,7 +130,6 @@ class QuestionFourActivity : AppCompatActivity() {
             finish()
         }
     }
-
     private fun setData(): Boolean {
         if (type1Select.isEmpty()) {
         } else {
@@ -243,7 +146,6 @@ class QuestionFourActivity : AppCompatActivity() {
         SingletonClass.getInstance()!!.questionsArrListData = questionsArrList
         return true
     }
-
     private fun apiCall() {
         var preferences: SharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE)
         val uId: String? = preferences.getString(UserPersistanceContract.UserEntry.USER_ID, null)
@@ -278,6 +180,10 @@ class QuestionFourActivity : AppCompatActivity() {
                 }
             })
         }
+    }
+    override fun onClickEvent(view: View?, position: Int, item: ListItem?) {
+        type1Select = item?.name.toString()
+        SingletonClass.getInstance().selectedStep4 = item?.name
     }
 
 }

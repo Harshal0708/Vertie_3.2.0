@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.vertie.databinding.FragmentHomeBinding
 import com.vertie.javacode.activities.MeasurementIntroActivity
 import com.vertie.modules.base.BaseFragment
@@ -21,6 +24,8 @@ class HomeFragment @Inject constructor() : BaseFragment(){
     lateinit var viewModelFactory: ViewModelProvider.Factory
     lateinit var binding: FragmentHomeBinding
     private val TAG = this.javaClass.simpleName
+
+    private var isAllFabsVisible: Boolean? = null
 
     private val viewModel: HomeViewModel by lazy {
         ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
@@ -71,6 +76,39 @@ class HomeFragment @Inject constructor() : BaseFragment(){
         binding.progressBar.setProgress(50)
         clickListeners()
         observe()
+
+        binding.btnBiofeedback.visibility = View.GONE
+        binding.btnHeartrate.visibility = View.GONE
+        binding.addAlarmActionText.visibility = View.GONE
+        binding.addPersonActionText.visibility = View.GONE
+
+        isAllFabsVisible = false
+
+        binding.addFab.setOnClickListener(View.OnClickListener {
+            (if (!isAllFabsVisible!!) {
+                binding.btnHeartrate.show()
+                binding.btnBiofeedback.show()
+                binding.addAlarmActionText.visibility = View.VISIBLE
+                binding.addPersonActionText.visibility = View.VISIBLE
+                true
+            } else {
+                binding.btnHeartrate.hide()
+                binding.btnBiofeedback.hide()
+                binding.addAlarmActionText.visibility = View.GONE
+                binding.addPersonActionText.visibility = View.GONE
+                false
+            }).also { isAllFabsVisible = it }
+        })
+
+        binding.btnBiofeedback.setOnClickListener {
+//            Toast.makeText(requireContext(), "Biofeedback", Toast.LENGTH_SHORT).show()
+            viewModel.measure()
+        }
+
+        binding.btnHeartrate.setOnClickListener {
+//            Toast.makeText(requireContext(), "Heart Rate", Toast.LENGTH_SHORT).show()
+            viewModel.measure()
+        }
     }
 
     private fun clickListeners(){

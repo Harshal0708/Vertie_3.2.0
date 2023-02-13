@@ -17,6 +17,7 @@ import android.util.Base64
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -24,10 +25,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.GsonBuilder
 import com.vertie.Constants
 import com.vertie.R
 import com.vertie.data.user.source.local.UserPersistanceContract
+import com.vertie.javacode.ListItem
+import com.vertie.javacode.ListItemSelectionAdapter
 import com.vertie.javacode.apiManager.APIManager
 import com.vertie.javacode.models.QuestionsObj
 import com.vertie.javacode.singleton.SingletonClass
@@ -38,7 +43,7 @@ import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.ByteArrayOutputStream
 
-class QuestionSevenActivity : AppCompatActivity() {
+class QuestionSevenActivity : AppCompatActivity(), ListItemSelectionAdapter.OnClickListner {
 
     private val PERMISSION_REQUEST_CODE = 200
 
@@ -51,26 +56,10 @@ class QuestionSevenActivity : AppCompatActivity() {
     private lateinit var question_view: View
     private lateinit var question_view_text: TextView
 
-    private lateinit var question_two_cons_1: ConstraintLayout
-    private lateinit var question_two_cons_2: ConstraintLayout
-    private lateinit var question_two_cons_3: ConstraintLayout
-    private lateinit var question_two_cons_4: ConstraintLayout
-    private lateinit var question_two_cons_5: ConstraintLayout
-
-    private lateinit var question_view_img_1: ImageView
-    private lateinit var question_view_img_2: ImageView
-    private lateinit var question_view_img_3: ImageView
-    private lateinit var question_view_img_4: ImageView
-    private lateinit var question_view_img_5: ImageView
-
-    private lateinit var question_two_date_1: TextView
-    private lateinit var question_two_date_2: TextView
-    private lateinit var question_two_date_3: TextView
-    private lateinit var question_two_date_4: TextView
-    private lateinit var question_two_date_5: TextView
+    private var recyclerView: RecyclerView? = null
 
     var questionsArrList = arrayListOf<QuestionsObj>()
-
+    lateinit var tvSiteType: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_seven)
@@ -78,6 +67,37 @@ class QuestionSevenActivity : AppCompatActivity() {
         questionsArrList = SingletonClass.getInstance()!!.questionsArrListData
 
         Init()
+        recyclerView = findViewById(R.id.rvSetp7)
+        var ll: LinearLayout = findViewById(R.id.ll)
+        tvSiteType = findViewById(R.id.tvSiteType)
+        ll.setOnClickListener {
+            val bottomSheet = BottomSheetDialog()
+            bottomSheet.show(
+                supportFragmentManager,
+                "ModalBottomSheet"
+            )
+//            = findViewById(R.id.tvSiteType)
+            tvSiteType.text = "aa"
+        }
+        val stressAndCopingList = arrayOf(
+            ListItem("1", "Hot to touch", "", false),
+            ListItem("2", "Painful and hurts", "", false),
+            ListItem("3", "Swollen", "", false),
+            ListItem("4", "Bleeding", "", false),
+            ListItem("5", "Draining pus or fluids", "", false),
+            ListItem("6", "What does it look or feel like?", "", false),
+            ListItem("7", "Choose all that apply", "", false),
+        )
+
+        recyclerView!!.setHasFixedSize(true)
+        recyclerView!!.layoutManager = LinearLayoutManager(this)
+        val adapter =
+            ListItemSelectionAdapter(
+                this,
+                stressAndCopingList
+            )
+        recyclerView!!.adapter = adapter
+        adapter.setOnClickListner(this)
 
         question_view = findViewById(R.id.question_view)
         question_view_text = question_view.findViewById(R.id.question_view_text)
@@ -94,7 +114,12 @@ class QuestionSevenActivity : AppCompatActivity() {
         }
 
         findViewById<TextView>(R.id.question_two_txt_name3).setOnClickListener {
-            startActivity(Intent(this@QuestionSevenActivity,QuestionSevenIntroActivity::class.java))
+            startActivity(
+                Intent(
+                    this@QuestionSevenActivity,
+                    QuestionSevenIntroActivity::class.java
+                )
+            )
         }
 
 
@@ -148,14 +173,14 @@ class QuestionSevenActivity : AppCompatActivity() {
             try {
 
                 photo = data?.extras?.get("data") as Bitmap
-                encodeBitmapImage(photo,1)
+                encodeBitmapImage(photo, 1)
                 icon1.setImageBitmap(photo)
             } catch (ex: Exception) {
             }
         } else if (requestCode == pickCamera2) {
             try {
                 photo2 = data?.extras?.get("data") as Bitmap
-                encodeBitmapImage(photo2,2)
+                encodeBitmapImage(photo2, 2)
                 icon2.setImageBitmap(photo2)
             } catch (ex: Exception) {
             }
@@ -218,163 +243,9 @@ class QuestionSevenActivity : AppCompatActivity() {
     private lateinit var type1Select: String
 
     private fun Init() {
-
         type1Select = ""
-
-        question_two_cons_1 = findViewById(R.id.question_cons_1)
-        question_two_cons_2 = findViewById(R.id.question_cons_2)
-        question_two_cons_3 = findViewById(R.id.question_cons_3)
-        question_two_cons_4 = findViewById(R.id.question_cons_4)
-        question_two_cons_5 = findViewById(R.id.question_cons_5)
-
-        question_view_img_1 = findViewById(R.id.question_view_img_1)
-        question_view_img_2 = findViewById(R.id.question_view_img_2)
-        question_view_img_3 = findViewById(R.id.question_view_img_3)
-        question_view_img_4 = findViewById(R.id.question_view_img_4)
-        question_view_img_5 = findViewById(R.id.question_view_img_5)
-
-        question_two_date_1 = findViewById(R.id.question_1)
-        question_two_date_2 = findViewById(R.id.question_2)
-        question_two_date_3 = findViewById(R.id.question_3)
-        question_two_date_4 = findViewById(R.id.question_4)
-        question_two_date_5 = findViewById(R.id.question_5)
-
         icon1 = findViewById<ImageView>(R.id.icon1)
         icon2 = findViewById<ImageView>(R.id.icon2)
-
-        question_two_cons_1.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                question_two_cons_1.setBackgroundResource(R.drawable.question_background_select_2)
-                question_view_img_1.visibility = View.VISIBLE
-                question_two_date_1.setTextColor(getColor(R.color.textColor))
-
-                question_two_cons_2.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_2.visibility = View.GONE
-                question_two_date_2.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_3.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_3.visibility = View.GONE
-                question_two_date_3.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_4.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_4.visibility = View.GONE
-                question_two_date_4.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_5.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_5.visibility = View.GONE
-                question_two_date_5.setTextColor(getColor(R.color.color231F20))
-
-                type1Select = "Hot to touch"
-            }
-        })
-
-        question_two_cons_2.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                question_two_cons_2.setBackgroundResource(R.drawable.question_background_select_2)
-                question_view_img_2.visibility = View.VISIBLE
-                question_two_date_2.setTextColor(getColor(R.color.textColor))
-
-                question_two_cons_1.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_1.visibility = View.GONE
-                question_two_date_1.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_3.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_3.visibility = View.GONE
-                question_two_date_3.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_4.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_4.visibility = View.GONE
-                question_two_date_4.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_5.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_5.visibility = View.GONE
-                question_two_date_5.setTextColor(getColor(R.color.color231F20))
-
-                type1Select = "Painful and hurts"
-            }
-
-        })
-
-        question_two_cons_3.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                question_two_cons_3.setBackgroundResource(R.drawable.question_background_select_2)
-                question_view_img_3.visibility = View.VISIBLE
-                question_two_date_3.setTextColor(getColor(R.color.textColor))
-
-                question_two_cons_1.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_1.visibility = View.GONE
-                question_two_date_1.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_2.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_2.visibility = View.GONE
-                question_two_date_2.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_4.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_4.visibility = View.GONE
-                question_two_date_4.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_5.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_5.visibility = View.GONE
-                question_two_date_5.setTextColor(getColor(R.color.color231F20))
-
-                type1Select = "Swollen"
-
-            }
-
-        })
-
-        question_two_cons_4.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                question_two_cons_4.setBackgroundResource(R.drawable.question_background_select_2)
-                question_view_img_4.visibility = View.VISIBLE
-                question_two_date_4.setTextColor(getColor(R.color.textColor))
-
-                question_two_cons_1.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_1.visibility = View.GONE
-                question_two_date_1.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_2.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_2.visibility = View.GONE
-                question_two_date_2.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_3.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_3.visibility = View.GONE
-                question_two_date_3.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_5.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_5.visibility = View.GONE
-                question_two_date_5.setTextColor(getColor(R.color.color231F20))
-
-                type1Select = "Bleeding"
-            }
-        })
-
-        question_two_cons_5.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                question_two_cons_5.setBackgroundResource(R.drawable.question_background_select_2)
-                question_view_img_5.visibility = View.VISIBLE
-                question_two_date_5.setTextColor(getColor(R.color.textColor))
-
-                question_two_cons_1.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_1.visibility = View.GONE
-                question_two_date_1.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_2.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_2.visibility = View.GONE
-                question_two_date_2.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_3.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_3.visibility = View.GONE
-                question_two_date_3.setTextColor(getColor(R.color.color231F20))
-
-                question_two_cons_4.setBackgroundResource(R.drawable.question_background_1)
-                question_view_img_4.visibility = View.GONE
-                question_two_date_4.setTextColor(getColor(R.color.color231F20))
-
-                type1Select = "Draining pus or fluids"
-            }
-        })
-
     }
 
     private var imageUri: Uri? = null
@@ -385,13 +256,13 @@ class QuestionSevenActivity : AppCompatActivity() {
     var encodeImageString: String = ""
     var encodeImageString2: String = ""
 
-    private fun encodeBitmapImage(bitmap: Bitmap,i:Int) {
+    private fun encodeBitmapImage(bitmap: Bitmap, i: Int) {
         val byteArrayOutputStream = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
-        if(i==1){
+        if (i == 1) {
             bytesofimage = byteArrayOutputStream.toByteArray()
             encodeImageString = Base64.encodeToString(bytesofimage, Base64.DEFAULT)
-        }else if(i==2){
+        } else if (i == 2) {
             bytesofimage2 = byteArrayOutputStream.toByteArray()
             encodeImageString2 = Base64.encodeToString(bytesofimage2, Base64.DEFAULT)
         }
@@ -467,11 +338,17 @@ class QuestionSevenActivity : AppCompatActivity() {
                         Globals.AddMenualRecord(this@QuestionSevenActivity)
                     }
                 }
+
                 override fun onFailure(call: Call<Any?>, t: Throwable) {
                     Globals.hideProgressDialog()
                 }
             })
         }
+    }
+
+    override fun onClickEvent(view: View?, position: Int, item: ListItem?) {
+        type1Select = item?.name.toString()
+        SingletonClass.getInstance().selectedStep7 = item?.name
     }
 
 }

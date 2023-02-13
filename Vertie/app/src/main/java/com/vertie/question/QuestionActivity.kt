@@ -8,13 +8,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vertie.R
-import com.vertie.adapter.MainRecyclerAdapter
 import com.vertie.model.CategoryItem
 
 class QuestionActivity : AppCompatActivity() {
     private var mainRecycle: RecyclerView? = null
     private var next: ImageView? = null
-    private var mainRecyclerAdapter: MainRecyclerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
